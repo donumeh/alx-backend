@@ -6,6 +6,7 @@ Simple helper function
 
 from typing import Tuple
 
+
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
     index_page: returns the page range for a page
