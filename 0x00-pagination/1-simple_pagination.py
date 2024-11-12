@@ -30,6 +30,9 @@ class Server:
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
+        """
+        Initializes the Fake Server class
+        """
         self.__dataset = None
 
     def dataset(self) -> List[List]:
@@ -46,6 +49,16 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        get_page: get a range of objects to view in page list
+
+        Args:
+            page: (int) the page number
+            page_size: (int) the number of content per page
+
+        Return:
+            Nested list of all records in csv file
+        """
 
         assert isinstance(page, int)
         assert isinstance(page_size, int)
