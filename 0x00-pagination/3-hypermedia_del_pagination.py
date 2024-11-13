@@ -16,7 +16,6 @@ class Server:
 
     DATA_FILE = "Popular_Baby_Names.csv"
 
-
     def __init__(self):
         self.__dataset = None
         self.__indexed_dataset = None
@@ -45,7 +44,7 @@ class Server:
             truncated_dataset = dataset[:1000]
             self.__indexed_dataset = {
                     i: dataset[1] for i in range(len(dataset))
-            }
+                    }
 
         return self.__indexed_dataset
 
@@ -65,17 +64,21 @@ class Server:
         current_index = index
         collected = 0
 
-        while collected < page_size and current_index < len(self.__indexed_dataset):
+        while collected < page_size and
+        current_index < len(self.__indexed_dataset):
             if current_index in self.__indexed_dataset:
                 data.append(self.__indexed_dataset[current_index])
                 collected += 1
             current_index += 1
 
-        next_index = current_index if current_index < len(self.__indexed_dataset) else None
-                    
+        next_index = (
+            current_index
+            if current_index < len(self.__indexed_dataset) else None
+        )
+
         return {
-                'index': index,
-                'next_index': next_index,
-                'page_size': len(data),
-                'data': data
+            "index": index,
+            "next_index": next_index,
+            "page_size": len(data),
+            "data": data,
         }
