@@ -10,7 +10,7 @@ from flask import Flask, render_template
 app: Flask = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', strict_slashes=True)
 def index() -> str:
     """
     Home Page
