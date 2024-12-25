@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Basic Flask APP
+Basic Flask App
 """
 
 from flask import Flask, request, render_template
