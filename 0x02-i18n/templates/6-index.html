@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Locale</title>
+</head>
+<body>
+    {% if g.user %}
+        <p>{{ _('logged_in_as', username=g.user.name) }}</p>
+    {% else %}
+        <p>{{ _('not_logged_in') }}</p>
+    {% endif %}
+    <p>Locale: {{ get_locale() }}</p>
+</body>
+</html>
